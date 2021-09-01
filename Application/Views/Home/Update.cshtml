@@ -1,0 +1,60 @@
+﻿@model Model.Entity.Books
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+
+<h2>Detalle de los Libros</h2>
+
+<form method="post" asp-action="Update">
+    <h4>Books</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Titulo
+        </dt>
+
+        <dd>
+            <input asp-for="@Model.title" />
+        </dd>
+
+        <dt>
+            Descripcion
+        </dt>
+
+        <dd>
+            <input asp-for="@Model.description)" />
+        </dd>
+
+        <dt>
+            Pagina
+        </dt>
+
+        <dd>
+           <input asp-for="@Model.pageCount)"/>
+        </dd>
+
+        <dt>
+            Conocido
+        </dt>
+
+        <dd>
+          <input asp-for=" @Model.excerpt)" />
+        </dd>
+
+        <dt>
+            Fecha
+        </dt>
+
+        <dd>
+            <input asp-for="@Model.publishDate)"/>
+        </dd>
+
+    </dl>
+    <button type="submit" class="btn btn-primary" asp-controller="home">Actualizar</button>
+</form>
+
+
+

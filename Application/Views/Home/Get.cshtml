@@ -1,0 +1,57 @@
+﻿
+@model Model.Entity.Books
+@{
+    ViewBag.Title = "Get";
+}
+
+<h3>@ViewBag.StatusCode</h3>
+<h2>Obtener por Id </h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="id">Id:</label>
+        <input class="form-control" name="id" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Obtener Libros por el ID</button>
+    </div>
+</form>
+
+@if (Model != null)
+{
+    <h2>Libros Encontrado</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>TITULO</th>
+                <th>DESCRIPCION</th>
+                <th>Paginas</th>
+                <th>Conocido</th>
+                <th>Fecha de Publicacion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.id</td>
+                <td>@Model.title</td>
+                <td>@Model.description</td>
+                <td>@Model.pageCount</td>
+                <td>@Model.excerpt</td>
+                <td>@Model.publishDate</td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+else if (string.IsNullOrEmpty("") || string.IsNullOrWhiteSpace(""))
+{
+    <div class="noBook">
+        <i class="material-icons md-72">Busqueda</i>
+        <h3>
+            No se encontro <br />
+        </h3>
+    </div>
+
+}
+<a asp-action="Index" class="btn btn-sm btn-primary">Volver al Menu de Libros</a>

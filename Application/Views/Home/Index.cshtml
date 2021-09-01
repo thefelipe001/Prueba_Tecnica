@@ -1,0 +1,213 @@
+﻿<script src="~/lib/datatables.net/jquery.dataTables.js"></script>
+<link href="~/lib/datatables.net/datatables.css" rel="stylesheet" />
+
+<div class="alert alert-info">
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Mantenimiento de Libros</h3>
+        </div>
+        <div class="col-md-2">
+            <button id="btnAgregarCliente"
+                    class="btn btn-success">
+                Agregar
+            </button>
+
+        </div>
+        <a href="~/Home/Get" class="btn btn-sm btn-warning">
+            Busqueda de Libros
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+        </a>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalRegistroCliente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="titulo">Registro de Libros</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                     
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Titulo</label>
+                                <input type="text" class="form-control" id="txttitle" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Descripcion</label>
+                                <input type="text" class="form-control" id="txtdescription" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Pagina</label>
+                                <input type="text" class="form-control" id="txtpageCount" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Conocido</label>
+                                <input type="text" class="form-control" id="txtexcerpt" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Fecha</label>
+                                <input type="date" class="form-control" id="txtpublishDate" />
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="hidIDCliente" value="-1" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnGrabarCliente">Grabar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<hr />
+<div id="divListadoLibros">
+
+</div>
+
+<script>
+
+    $("#divListadoLibros").on('click', '.btnEliminarBooks', function () {
+        var vIdCliente = $(this).attr('data-id');
+
+        if (confirm("¿Estás seguro de eliminar el cliente?")) {
+            $.ajax({
+                type: "POST",
+                url: "Home/Delete",
+                data: { idCliente: vIdCliente },
+                cache: false,
+                success: function (existo) {
+                    if (existo) {
+                        CargarListadoBooks();
+                        alert("Eliminado correctamente");
+                    } else {
+                        alert("Ocurrió un error al realizar la eliminación");
+                    }
+                }
+            });
+
+        }
+
+
+
+    });
+
+
+    $("#btnAgregarCliente").click(function () {
+
+        $("#modalRegistroCliente").modal();
+
+    });
+
+
+    function limpiarControles() {
+        $("#hidIDCliente").val(-1);
+        $("#txttitle").val("");
+        $("#txtdescription").val("");
+        $("#txtpageCount").val(0);
+        $("#txtexcerpt").val("");
+        $("#txtpublishDate").val("");
+    }
+
+    $("#btnGrabarCliente").click(function () {
+        var vID = $("#hidIDCliente").val();
+        var vtitle = $("#txttitle").val();
+        var vdescription = $("#txtdescription").val();
+        var vpageCount = $("#txtpageCount").val();
+        var vexcerpt = $("#txtexcerpt").val();
+        var vpublishDate = $("#txtpublishDate").val();
+
+        $.ajax({
+            type: "POST",
+            url: "Home/Add",
+            cache: false,
+            data: {
+                id: vID,
+                title: vtitle,
+                description: vdescription,
+                pageCount: vpageCount,
+                excerpt: vexcerpt,
+                publishDate: vpublishDate
+            },
+            success: function (exito) {
+                if (exito) {
+                    alert("Se registró correctamente");
+                    CargarListadoBooks();
+                    $("#modalRegistroCliente").modal("toggle");
+                    limpiarControles();
+                } else {
+                    alert("Ocurrió un error en la transacción");
+                }
+            }
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    CargarListadoBooks();
+    function CargarListadoBooks() {
+        $.ajax({
+            type: "GET",
+            url: "Home/Listado",
+            cache: false,
+            success: function (dataHtml) {
+                $("#divListadoLibros").html(dataHtml);
+                $("#divListadoLibros #tbClientes").DataTable();
+            }
+        });
+    }
+</script>
+
+
+

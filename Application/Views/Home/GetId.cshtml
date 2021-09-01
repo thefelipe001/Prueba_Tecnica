@@ -1,0 +1,57 @@
+﻿
+@model Model.Entity.Books
+
+@{
+    ViewBag.Title = "GetId";
+}
+
+<h2>Detalle de los Libros</h2>
+
+<div>
+    <h4>Books</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Titulo
+        </dt>
+
+        <dd>
+            @Model.title
+        </dd>
+
+        <dt>
+            Descripcion
+        </dt>
+
+        <dd>
+            @Model.description)
+        </dd>
+
+        <dt>
+            Pagina
+        </dt>
+
+        <dd>
+            @Model.pageCount)
+        </dd>
+
+        <dt>
+            Conocido
+        </dt>
+
+        <dd>
+            @Model.excerpt)
+        </dd>
+
+        <dt>
+            Fecha
+        </dt>
+
+        <dd>
+            @Model.publishDate)
+        </dd>
+
+    </dl>
+</div>
+
+
