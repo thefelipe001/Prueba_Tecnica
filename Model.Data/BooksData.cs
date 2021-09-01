@@ -10,10 +10,11 @@ namespace Model.Data
 {
     public class BooksData
     {
-        public  async Task<IEnumerable<Books>> All()
+        //Metodo para Mostar Todo los Libros
+
+        public async Task<IEnumerable<Books>> All()
         {
 
-            //Metodo para Mostar Todo los Libros
             List<Books> reservationList = new List<Books>();
             using (var httpClient = new HttpClient())
             {
@@ -26,5 +27,32 @@ namespace Model.Data
 
          
         }
+
+
+
+        public static async void  Add(int idCliente) 
+        {
+            Books receivedReservation = new Books();
+            using (var httpClient = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(idCliente), Encoding.UTF8, "application/json");
+
+                using (var response = await httpClient.PostAsync("https://fakerestapi.azurewebsites.net/api/v1/Books", content))
+                {
+                    if (idCliente == -1)
+                    {
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                        receivedReservation = JsonConvert.DeserializeObject<Books>(apiResponse);
+                    }
+                    else
+                    {
+
+                    }
+
+                }
+            }
+        }
+
+    
     }
 }

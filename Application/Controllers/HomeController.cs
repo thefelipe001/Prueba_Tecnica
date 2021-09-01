@@ -37,32 +37,19 @@ namespace Application.Controllers
 
 
 
+
         [HttpPost]
         public async Task<ActionResult> Add(int idCliente)
         {
-
-            Books receivedReservation = new Books();
-            using (var httpClient = new HttpClient())
+            bool receivedReservation = true;
+            if (true)
             {
-                StringContent content = new StringContent(JsonConvert.SerializeObject(idCliente), Encoding.UTF8, "application/json");
+                BooksData.Add(idCliente);
 
-                using (var response = await httpClient.PostAsync("https://fakerestapi.azurewebsites.net/api/v1/Books", content))
-                {
-                    if (idCliente == -1)
-                    {
-                        string apiResponse = await response.Content.ReadAsStringAsync();
-                        receivedReservation = JsonConvert.DeserializeObject<Books>(apiResponse);
-                    }
-                    else
-                    {
 
-                    }
-
-                }
             }
             return Json(receivedReservation);
         }
-
 
 
 
