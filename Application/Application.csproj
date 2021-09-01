@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Model.Data\Model.Data.csproj" />
     <ProjectReference Include="..\Model.Entity\Model.Entity.csproj" />
+    <ProjectReference Include="..\Model.Neg\Model.Neg.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1868,6 +1868,20 @@
         "runtime": {
           "bin/placeholder/Model.Entity.dll": {}
         }
+      },
+      "Model.Neg/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Model.Data": "1.0.0",
+          "Model.Entity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Model.Neg.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.Neg.dll": {}
+        }
       }
     }
   },
@@ -6313,6 +6327,11 @@
       "type": "project",
       "path": "../Model.Entity/Model.Entity.csproj",
       "msbuildProject": "../Model.Entity/Model.Entity.csproj"
+    },
+    "Model.Neg/1.0.0": {
+      "type": "project",
+      "path": "../Model.Neg/Model.Neg.csproj",
+      "msbuildProject": "../Model.Neg/Model.Neg.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6321,6 +6340,7 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
       "Model.Data >= 1.0.0",
       "Model.Entity >= 1.0.0",
+      "Model.Neg >= 1.0.0",
       "Newtonsoft.Json >= 13.0.1"
     ]
   },
@@ -6361,6 +6381,9 @@
             },
             "C:\\Users\\LENOVO\\Desktop\\Prueba\\Application\\Model.Entity\\Model.Entity.csproj": {
               "projectPath": "C:\\Users\\LENOVO\\Desktop\\Prueba\\Application\\Model.Entity\\Model.Entity.csproj"
+            },
+            "C:\\Users\\LENOVO\\Desktop\\Prueba\\Application\\Model.Neg\\Model.Neg.csproj": {
+              "projectPath": "C:\\Users\\LENOVO\\Desktop\\Prueba\\Application\\Model.Neg\\Model.Neg.csproj"
             }
           }
         }

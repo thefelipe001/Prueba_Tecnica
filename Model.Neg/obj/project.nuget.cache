@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3bFYA68l54cLjHCVdbUwEIbLRuEETovGUE8K5w7LErjT5R6QzKlhIXrGaQA+77vy2OGy/QpoQhgtMfHOfgBjLQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LENOVO\\Desktop\\Prueba\\Application\\Model.Neg\\Model.Neg.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LENOVO\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

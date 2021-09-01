@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Model.Data;
 using Model.Entity;
+using Model.Neg;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace Application.Controllers
         {
             List<Books> reservationList = new List<Books>();
 
-            ViewBag.ListadoCliente = await BooksData.All();
+            ViewBag.ListadoCliente = await BooksNeg.All();
 
 
             return PartialView();

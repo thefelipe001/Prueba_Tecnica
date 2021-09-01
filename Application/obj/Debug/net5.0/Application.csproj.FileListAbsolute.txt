@@ -124,3 +124,5 @@ C:\Users\LENOVO\Desktop\Prueba\Application\Application\bin\Debug\net5.0\Model.Da
 C:\Users\LENOVO\Desktop\Prueba\Application\Application\bin\Debug\net5.0\System.Net.Http.Formatting.dll
 C:\Users\LENOVO\Desktop\Prueba\Application\Application\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 C:\Users\LENOVO\Desktop\Prueba\Application\Application\obj\Debug\net5.0\Razor\Views\Home\Update.cshtml.g.cs
+C:\Users\LENOVO\Desktop\Prueba\Application\Application\bin\Debug\net5.0\Model.Neg.dll
+C:\Users\LENOVO\Desktop\Prueba\Application\Application\bin\Debug\net5.0\Model.Neg.pdb

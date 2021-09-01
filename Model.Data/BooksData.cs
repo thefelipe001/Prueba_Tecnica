@@ -10,8 +10,10 @@ namespace Model.Data
 {
     public class BooksData
     {
-        public static async Task<IEnumerable<Books>> All()
+        public  async Task<IEnumerable<Books>> All()
         {
+
+            //Metodo para Mostar Todo los Libros
             List<Books> reservationList = new List<Books>();
             using (var httpClient = new HttpClient())
             {
@@ -21,6 +23,7 @@ namespace Model.Data
                 return  reservationList = JsonConvert.DeserializeObject<List<Books>>(apiResponse);
                 }
             }
+
          
         }
     }

@@ -29,6 +29,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
           "Model.Data": "1.0.0",
           "Model.Entity": "1.0.0",
+          "Model.Neg": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -1611,6 +1612,18 @@
         },
         "compile": {
           "Model.Entity.dll": {}
+        }
+      },
+      "Model.Neg/1.0.0": {
+        "dependencies": {
+          "Model.Data": "1.0.0",
+          "Model.Entity": "1.0.0"
+        },
+        "runtime": {
+          "Model.Neg.dll": {}
+        },
+        "compile": {
+          "Model.Neg.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -4095,6 +4108,11 @@
       "sha512": ""
     },
     "Model.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Model.Neg/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

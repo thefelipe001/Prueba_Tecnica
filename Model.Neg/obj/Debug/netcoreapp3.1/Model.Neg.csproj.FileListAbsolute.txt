@@ -1,0 +1,14 @@
+C:\Users\LENOVO\Desktop\Prueba\Application\Model.Neg\bin\Debug\netcoreapp3.1\Model.Neg.deps.json
+C:\Users\LENOVO\Desktop\Prueba\Application\Model.Neg\bin\Debug\netcoreapp3.1\Model.Neg.dll
+C:\Users\LENOVO\Desktop\Prueba\Application\Model.Neg\bin\Debug\netcoreapp3.1\Model.Neg.pdb
+C:\Users\LENOVO\Desktop\Prueba\Application\Model.Neg\bin\Debug\netcoreapp3.1\Model.Data.dll
+C:\Users\LENOVO\Desktop\Prueba\Application\Model.Neg\bin\Debug\netcoreapp3.1\Model.Entity.dll
+C:\Users\LENOVO\Desktop\Prueba\Application\Model.Neg\bin\Debug\netcoreapp3.1\Model.Data.pdb
+C:\Users\LENOVO\Desktop\Prueba\Application\Model.Neg\bin\Debug\netcoreapp3.1\Model.Entity.pdb
+C:\Users\LENOVO\Desktop\Prueba\Application\Model.Neg\obj\Debug\netcoreapp3.1\Model.Neg.csprojAssemblyReference.cache
+C:\Users\LENOVO\Desktop\Prueba\Application\Model.Neg\obj\Debug\netcoreapp3.1\Model.Neg.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Desktop\Prueba\Application\Model.Neg\obj\Debug\netcoreapp3.1\Model.Neg.AssemblyInfo.cs
+C:\Users\LENOVO\Desktop\Prueba\Application\Model.Neg\obj\Debug\netcoreapp3.1\Model.Neg.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\Prueba\Application\Model.Neg\obj\Debug\netcoreapp3.1\Model.Neg.csproj.CopyComplete
+C:\Users\LENOVO\Desktop\Prueba\Application\Model.Neg\obj\Debug\netcoreapp3.1\Model.Neg.dll
+C:\Users\LENOVO\Desktop\Prueba\Application\Model.Neg\obj\Debug\netcoreapp3.1\Model.Neg.pdb
