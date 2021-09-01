@@ -52,20 +52,7 @@ namespace Application.Controllers
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+       //Filtrar por Id
 
         public ViewResult Get() => View();
 
@@ -90,8 +77,6 @@ namespace Application.Controllers
             return View(reservation);
         }
 
-
-      
 
 
 

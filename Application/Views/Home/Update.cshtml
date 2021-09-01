@@ -53,8 +53,39 @@
         </dd>
 
     </dl>
-    <button type="submit" class="btn btn-primary" asp-controller="home">Actualizar</button>
+    <button type="submit" class="btnbtnEliminarBooks btn btn-primary" asp-controller="home">Actualizar</button>
 </form>
 
 
 
+<script>
+
+    $("#divListadoLibros").on('click', '.btnEliminarBooks', function () {
+        var vIdCliente = $(this).attr('data-id');
+
+        if (confirm("¿Estás seguro de modificar el cliente?")) {
+            $.ajax({
+                type: "Get",
+                url: "Home/Index",
+                data: { idCliente: vIdCliente },
+                cache: false,
+                success: function (books) {
+                    if (existo) {
+                        CargarListadoBooks();
+                        alert("Modificado correctamente");
+                    } else {
+                        alert("Ocurrió un error al realizar la Modificar");
+                    }
+                }
+            });
+
+        }
+
+
+
+    });
+
+
+
+
+</script>
