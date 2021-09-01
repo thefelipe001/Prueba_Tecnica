@@ -5,6 +5,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\jquery-3.4.1.intellisense.js" />
+    <Content Remove="wwwroot\js\jquery-3.4.1.js" />
+    <Content Remove="wwwroot\js\jquery-3.4.1.min.js" />
+    <Content Remove="wwwroot\js\jquery-3.4.1.min.map" />
+    <Content Remove="wwwroot\js\jquery-3.4.1.slim.js" />
+    <Content Remove="wwwroot\js\jquery-3.4.1.slim.min.js" />
+    <Content Remove="wwwroot\js\jquery-3.4.1.slim.min.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\jquery-3.4.1.intellisense.js" />
+    <None Include="wwwroot\js\jquery-3.4.1.js" />
+    <None Include="wwwroot\js\jquery-3.4.1.min.js" />
+    <None Include="wwwroot\js\jquery-3.4.1.min.map" />
+    <None Include="wwwroot\js\jquery-3.4.1.slim.js" />
+    <None Include="wwwroot\js\jquery-3.4.1.slim.min.js" />
+    <None Include="wwwroot\js\jquery-3.4.1.slim.min.map" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
