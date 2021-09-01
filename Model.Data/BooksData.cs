@@ -29,8 +29,8 @@ namespace Model.Data
         }
 
 
-
-        public static async void  Add(int idCliente) 
+        //Agregar todo los Libros
+        public  async void  Add(int idCliente) 
         {
             Books receivedReservation = new Books();
             using (var httpClient = new HttpClient())
@@ -49,6 +49,25 @@ namespace Model.Data
 
                     }
 
+                }
+            }
+        }
+
+
+        //Filtrar por el ID
+        public static async void Get(int id)
+        {
+            Books reservation = new Books();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("https://fakerestapi.azurewebsites.net/api/v1/Books/" + id))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                        reservation = JsonConvert.DeserializeObject<Books>(apiResponse);
+                    }
+               
                 }
             }
         }

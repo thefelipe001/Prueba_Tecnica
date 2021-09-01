@@ -24,7 +24,7 @@ namespace Application.Controllers
             return View();
         }
 
-
+        //Listado
         public async Task<IActionResult> Listado()
         {
             List<Books> reservationList = new List<Books>();
@@ -37,14 +37,14 @@ namespace Application.Controllers
 
 
 
-
+        //Agregar
         [HttpPost]
         public async Task<ActionResult> Add(int idCliente)
         {
             bool receivedReservation = true;
             if (true)
             {
-                BooksData.Add(idCliente);
+                BooksNeg.Add(idCliente);
 
 
             }
@@ -91,11 +91,11 @@ namespace Application.Controllers
         }
 
 
+      
+
 
 
         //Eliminar
-
-
 
         [HttpPost]
         public async Task<ActionResult> Delete(int id)

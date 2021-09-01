@@ -19,5 +19,12 @@ namespace Model.Neg
          return await  dao.All();
            
         }
+
+
+        //Agregar Libros
+        public static async void Add(int idCliente) 
+        {
+             dao.Add(idCliente);
+        }
     }
 }
